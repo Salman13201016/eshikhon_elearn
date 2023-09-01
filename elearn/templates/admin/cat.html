@@ -250,7 +250,16 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Category Entry</h4>
+                  {% if messages %}
+                  <ul class="messages">
+                    {% for message in messages %}
+                    <li>
+
+                      {{ message }}
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
                   <form class="forms-sample" method="post" action="{% url 'cat_insert' %}">
                     {% csrf_token %}
                     <div class="form-group">
