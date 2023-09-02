@@ -2,13 +2,15 @@ from django.shortcuts import HttpResponse, render, redirect
 from django.contrib import messages
 from .models import Categories
 def index(request):
-    return render(request,'admin/cat.html')
+    categories = Categories.objects.all().order_by('-id')
+    cat_data = {'data':categories}
+    return render(request,'admin/cat.html',cat_data)
 def insert(request):
     cat_name = request.POST.get('cat_name')
     if cat_name:
         if len(cat_name)<4:
             messages.success(request, 'the cat name field length minimum 3')
-            
+
         elif Categories.objects.filter(name=cat_name).exists():
             messages.success(request, 'This value already exists.')
         else:
