@@ -288,6 +288,9 @@
                           <th>
                             Category Name
                           </th>
+                          <th>
+                            Action
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -298,6 +301,10 @@
                           </td>
                           <td>
                             {{i.name}}
+                          </td>
+                          <td>
+                            <a target="_blank" href="{% url 'edit_index' i.id %}">Edit </a><a>Delete</a>
+
                           </td>
                         </tr>
                         {% endfor %}
