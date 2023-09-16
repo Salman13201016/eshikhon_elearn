@@ -58,3 +58,9 @@ def update(request):
         messages.success(request, 'The field can not be empty')
     
     return redirect('catadmin')
+
+def delete(request,id):
+    
+    cat_obj = Categories.objects.get(id=id)
+    cat_obj.delete() #delete from table where id = id
+    return redirect('catadmin')
