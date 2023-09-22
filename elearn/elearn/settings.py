@@ -30,6 +30,8 @@ SECRET_KEY = 'django-insecure-=o=yx2$lh6d#9jhhd73ua&8uh&tsr+n&lng19^x5n%b*7$j!47
 DEBUG = True
 
 ALLOWED_HOSTS = []
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Application definition
@@ -41,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'elearn'
+    'elearn',
+    'ckeditor',
+    'course'
 ]
 
 MIDDLEWARE = [
