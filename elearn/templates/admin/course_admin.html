@@ -305,13 +305,35 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputName1">Course Fee</label>
-                                            <input type="text" class="form-control" id="exampleInputName1"
+                                            <input type="text" class="form-control course_fee" id="exampleInputName1"
                                                 placeholder="Course Fee" name="course_fee" required>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group dis_status_div">
+                                            <label for="">Do you have any discount (yes/no)</label>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input dis_status"
+                                                        name="dis_status" id="dis_status1" value="1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input dis_status"
+                                                        name="dis_status" id="dis_status2" value="0" checked>
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group discount_div">
                                             <label for="exampleInputName1">Discount</label>
-                                            <input type="text" class="form-control" id="exampleInputName1"
+                                            <input type="text" class="form-control" id="discount"
                                                 placeholder="Course Discount" name="course_discount" required>
+                                        </div>
+                                        <div class="form-group dis_course_fee_div">
+                                            <label for="exampleInputName1">Course Fee After Discount</label>
+                                            <input type="text" class="form-control" id="dis_course_fee"
+                                                placeholder="Course After Discount" name="dis_course_fee" required>
                                         </div>
 
                                         <div class="form-group">
@@ -405,6 +427,10 @@
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="{% static 'design/js/file-upload.js' %}"></script>
+
+    <script src="{% static 'design/js/course.js' %}">
+
+    </script>
     <!-- End custom js for this page-->
 </body>
 
