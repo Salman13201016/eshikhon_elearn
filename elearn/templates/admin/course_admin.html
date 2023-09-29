@@ -369,27 +369,55 @@
                                                         #
                                                     </th>
                                                     <th>
-                                                        Category Name
+                                                        Course Name
                                                     </th>
                                                     <th>
-                                                        Action
+                                                        Description
+                                                    </th>
+                                                    <th>
+                                                        Fee
+                                                    </th>
+                                                    <th>
+                                                        discount
+                                                    </th>
+                                                    <th>
+                                                        module
+                                                    </th>
+                                                    <th>
+                                                        image
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                                {% for i in course_data %}
                                                 <tr class="table-info">
                                                     <td>
-
+                                                        {{ forloop.counter }}
+                                                    </td>
+                                                    <td>
+                                                        {{i.name}}
                                                     </td>
                                                     <td>
 
+                                                        {{i.description}}
                                                     </td>
                                                     <td>
+                                                        {{i.fee}}
+                                                    </td>
+                                                    <td>
+                                                        {{i.discount}}
+                                                    </td>
+                                                    <td>
+                                                        {{i.module}}
 
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{i.image.url}}" />
+                                                        {{i.image}}
 
                                                     </td>
                                                 </tr>
+                                                {% endfor %}
 
                                             </tbody>
                                         </table>

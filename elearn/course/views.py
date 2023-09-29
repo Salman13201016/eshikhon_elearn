@@ -6,7 +6,8 @@ from .models import courses
 
 def index(request):
     all_cats = Categories.objects.all().order_by('-id')
-    data = {'data':all_cats}
+    all_courses = courses.objects.all().order_by('-id')
+    data = {'data':all_cats,'course_data':all_courses}
     return render(request,'admin/course_admin.html',data)
 
 
