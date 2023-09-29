@@ -275,7 +275,8 @@
                                         {% endfor %}
                                     </ul>
                                     {% endif %}
-                                    <form class="forms-sample" method="post" action="">
+                                    <form class="forms-sample" method="post" action="{% url 'course_insert' %}"
+                                        enctype="multipart/form-data">
                                         {% csrf_token %}
 
                                         <div class="form-group">
