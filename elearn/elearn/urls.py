@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from . import views as v
 
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,4 @@ urlpatterns = [
     path('update/', v.update,name='cat_update'),
     path('delete/<int:id>', v.delete,name='delete'),
     path('course/', include('course.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
