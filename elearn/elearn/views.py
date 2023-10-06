@@ -5,6 +5,7 @@ def index(request):
     categories = Categories.objects.all().order_by('-id')
     cat_data = {'data':categories}
     return render(request,'admin/cat.html',cat_data)
+    
 def insert(request):
     cat_name = request.POST.get('cat_name')
     if cat_name:
