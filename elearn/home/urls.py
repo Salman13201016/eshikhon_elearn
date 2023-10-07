@@ -23,5 +23,6 @@ urlpatterns = [
    
     path('', v.index,name='home_index'),
     path('product/list/<int:id>', v.product_list,name='product_list'),
+    path('product/details/<int:id>', v.details,name='product_details'),
     # path('admin/insert', v.insert,name='course_insert'),
 ]
