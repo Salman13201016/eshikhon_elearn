@@ -8,24 +8,29 @@ def index(req):
     data = Categories.objects.all()
     data2 = courses.objects.order_by('-pk')[:4]
     data3 = courses.objects.filter(cat_id_id=1).order_by('-pk')[:4]
+    data4 = courses.objects.order_by('-discount')[:4]
     length = len(data3)
     length = length !=0
     print("asdasdasdasdasdasdasdasdasdasdadasdasdadasdasdasdd",length)
     
     discount_fee_list = []
     discount_fee_list2 = []
-    for i,j in zip(data2,data3):
+    discount_fee_list3 = []
+    for i,j,k in zip(data2,data3,data4):
         print(i)
         print("helo",i.fee)
         print("heellwdadasd",i.discount)
         discount_fee = i.fee - ((i.fee*i.discount)/100)
         discount_fee2 = j.fee - ((j.fee*j.discount)/100)
+        discount_fee3 = k.fee - ((k.fee*k.discount)/100)
         discount_fee_list.append(discount_fee)
         discount_fee_list2.append(discount_fee2)
+        discount_fee_list3.append(discount_fee3)
     # data = Categories.objects.all()
     zipped_data = zip_longest(data2, discount_fee_list)
     zipped_data2 = zip_longest(data3, discount_fee_list2)
-    cat = {'all_cat':data,'data_2':zipped_data,'data_3':zipped_data2,'size1':length}
+    zipped_data3 = zip_longest(data4, discount_fee_list3)
+    cat = {'all_cat':data,'data_2':zipped_data,'data_3':zipped_data2,'size1':length,'data4':zipped_data3}
     return render(req,'user/home.html',cat)
 
 def product_list(req,id):
