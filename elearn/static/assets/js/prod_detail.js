@@ -17,16 +17,16 @@ $(document).ready(function () {
         if (value_quant > 5) {
             value_quant = 5
             $('.quant-input input').val(5)
-            $('.count').text(5)
+            // $('.count').text(5)
         }
         else {
             $('.quant-input input').val(value_quant)
-            $('.count').text(value_quant)
+            // $('.count').text(value_quant)
         }
-        price1 = price * value_quant
-        price2 = main_price * value_quant
-        // // alert(price1)
-        $('.total-price .value').text(price1)
+        // price1 = price * value_quant
+        // price2 = main_price * value_quant
+        // // // alert(price1)
+        // $('.total-price .value').text(price1)
         // $('.price-strike').text(price2)
 
 
@@ -39,17 +39,30 @@ $(document).ready(function () {
         if (value_quant < 1) {
             value_quant = 1
             $('.quant-input input').val(1)
-            $('.count').text(1)
+            // $('.count').text(1)
         }
         else {
             $('.quant-input input').val(value_quant)
-            $('.count').text(value_quant)
+            // $('.count').text(value_quant)
         }
+        // price1 = price * value_quant
+        // price2 = main_price * value_quant
+        // // // alert(price1)
+        // $('.total-price .value').text(price1)
+        // $('.price-strike').text(price2)
+
+    });
+
+    $('body').on('click', '.add_to_cart', function () {
+        console.log("yes")
+        value_quant = $('.quant-input input').val()
+        $('.count').text(value_quant)
         price1 = price * value_quant
         price2 = main_price * value_quant
         // // alert(price1)
         $('.total-price .value').text(price1)
         // $('.price-strike').text(price2)
+
 
     });
 });
