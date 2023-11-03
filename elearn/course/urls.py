@@ -24,3 +24,4 @@ urlpatterns = [
     path('admin/', v.index,name='courseadmin'),
     path('admin/insert', v.insert,name='course_insert'),
 ]
+

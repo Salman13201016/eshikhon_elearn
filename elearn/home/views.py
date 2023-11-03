@@ -55,3 +55,7 @@ def details(req,id):
     course_obj1 = {'all_course':course_obj,"discount":discount_fee}
    
     return render(req,'user/detail.html',course_obj1)
+
+def cart(req):
+   
+    return render(req,'user/cart.html')

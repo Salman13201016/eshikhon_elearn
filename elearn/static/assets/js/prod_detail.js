@@ -53,6 +53,20 @@ $(document).ready(function () {
 
     });
 
+
+
+    title_local = localStorage.getItem('title')
+    if (title_local !== null) {
+        title_a = JSON.parse(title_local)
+        console.log(title_a)
+    }
+    else {
+        title_a = []
+        price_a = []
+        quant_a = []
+    }
+
+
     $('body').on('click', '.add_to_cart', function () {
         console.log("yes")
         value_quant = $('.quant-input input').val()
@@ -61,6 +75,26 @@ $(document).ready(function () {
         price2 = main_price * value_quant
         // // alert(price1)
         $('.total-price .value').text(price1)
+        title = $('.course_title').text()
+        price = $('.price').text()
+
+        if (title_local !== null) {
+            title_a.push(title)
+            // price_a.push(price)
+            // quant_a.push(value_quant)
+        }
+
+        // title_a.push(title)
+        // price_a.push(price)
+        // quant_a.push(value_quant)
+        console.log(title_a)
+
+        localStorage.setItem('title', JSON.stringify(title_a))
+        // localStorage.setItem('price', JSON.stringify(price_a))
+        // localStorage.setItem('value_quant', JSON.stringify(quant_a))
+
+        console.log(localStorage.getItem('title'))
+
         // $('.price-strike').text(price2)
 
 
